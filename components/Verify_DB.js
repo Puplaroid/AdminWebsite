@@ -1,21 +1,21 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function Report_DB() {
-  const reports = [
-    { user: "yyyyy", time: "9:42" },
-    { user: "yyyyy", time: "9:41" },
-    { user: "yyyyy", time: "9:38" },
-    { user: "yyyyy", time: "9:38" },
+export default function Verify_DB() {
+  const verify_user = [
+    { username: "yyyyy", time: "9:42" },
+    { username: "yyyyy", time: "9:41" },
+    { username: "yyyyy", time: "9:38" },
+    { username: "yyyyy", time: "9:38" },
   ];
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Report on order</Text>
-      {reports.map((report, index) => (
+      <Text style={styles.header}>Verify</Text>
+      {verify_user.map((user, index) => (
         <TouchableOpacity key={index} style={styles.reportContainer}>
-          <Text style={styles.reportText}>user: {report.user}</Text>
-          <Text style={styles.reportTime}>{report.time}</Text>
+          <Text style={styles.reportText}>user: {user.username}</Text>
+          <Text style={styles.reportTime}>{user.time}</Text>
         </TouchableOpacity>
       ))}
     </View>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f0f0f0",
     borderRadius: 10,
     marginLeft: 10,
-    width: "30%",
+    width: "20%",
   },
   header: {
     fontSize: 20,

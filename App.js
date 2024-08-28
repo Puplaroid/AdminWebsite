@@ -22,6 +22,7 @@ import Report from "./Pages/Report";
 import Order from "./Pages/Order";
 import Cafeteria from "./Pages/Cafeteria";
 import Verify from "./Pages/Verify";
+import User from "./Pages/User";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -38,6 +39,7 @@ export default function App() {
         <Stack.Screen name="Order" component={Order} />
         <Stack.Screen name="Cafeteria" component={Cafeteria} />
         <Stack.Screen name="Verify" component={Verify} />
+        <Stack.Screen name="User" component={User} />
       </Stack.Navigator>
     </NavigationContainer>
     // </ScrollView>

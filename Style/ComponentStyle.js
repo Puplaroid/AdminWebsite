@@ -31,7 +31,7 @@ export const ComponentStyle = StyleSheet.create({
     borderRadius: 5,
   },
   sidebarButtonPressed: {
-    backgroundColor: "#FFF",git add README.md
+    backgroundColor: "#FFF",
   },
   sidebarButtonText: {
     color: "black",

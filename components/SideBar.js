@@ -117,6 +117,25 @@ export default function SideBar() {
             <Text style={ComponentStyle.sidebarButtonText}>Verify</Text>
           </View>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[
+            ComponentStyle.sidebarButton,
+            pressedButton === "User" && ComponentStyle.sidebarButtonPressed,
+          ]}
+          onPressIn={() => handlePressIn("User")}
+          onPressOut={handlePressOut}
+          onPress={() => navigation.navigate("User")}
+        >
+          <View style={ComponentStyle.sidebarIconAndText}>
+            <Image
+              source={require("../Image/UserIcon.png")}
+              style={ComponentStyle.sidebarIcon}
+              resizeMode="cover"
+            />
+            <Text style={ComponentStyle.sidebarButtonText}>User</Text>
+          </View>
+        </TouchableOpacity>
       </View>
       <TouchableOpacity onPress={() => navigation.navigate("Login")}>
         <View style={ComponentStyle.sidebarSignOut}>

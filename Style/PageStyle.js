@@ -10,6 +10,9 @@ export const PageStyle = StyleSheet.create({
     padding: 10,
     width: "100%",
     height: "100%",
+    flexDirection: "row",
+    alignItems: "flex-start", // Align items to the top along the cross axis
+    justifyContent: "flex-start", // Align items to the left along the main axis
   },
 
 
@@ -200,6 +203,30 @@ export const PageStyle = StyleSheet.create({
   VE_buttonText: {
     textAlign: "center",
     fontSize: 16,
+  },
+
+  //User
+  US_container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#f0f0f0", // Light gray background
+  },
+  US_buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 20,
+  },
+  US_button: {
+    backgroundColor: "#4CAF50", // Green background for buttons
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 5,
+  },
+  US_buttonText: {
+    color: "#ffffff", // White text color
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 
 });
