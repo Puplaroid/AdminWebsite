@@ -44,6 +44,25 @@ export default function SideBar() {
         <TouchableOpacity
           style={[
             ComponentStyle.sidebarButton,
+            pressedButton === "ContactSupport" && ComponentStyle.sidebarButtonPressed,
+          ]}
+          onPressIn={() => handlePressIn("ContactSupport")}
+          onPressOut={handlePressOut}
+          onPress={() => navigation.navigate("ContactSupport")}
+        >
+          <View style={ComponentStyle.sidebarIconAndText}>
+            <Image
+              source={require("../Image/ReportIcon.png")}
+              style={ComponentStyle.sidebarIcon}
+              resizeMode="cover"
+            />
+            <Text style={ComponentStyle.sidebarButtonText}>Contact Support</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[
+            ComponentStyle.sidebarButton,
             pressedButton === "Report" && ComponentStyle.sidebarButtonPressed,
           ]}
           onPressIn={() => handlePressIn("Report")}

@@ -18,11 +18,13 @@ import Dashboard from "./components/Dashboard";
 import Title from "./Pages/Title";
 import Login from "./Pages/Login";
 import Main from "./Pages/Main";
+import ContactSupport from "./Pages/ContactSupport";
 import Report from "./Pages/Report";
 import Order from "./Pages/Order";
 import Cafeteria from "./Pages/Cafeteria";
 import Verify from "./Pages/Verify";
 import User from "./Pages/User";
+import ContactSupportDetail from "./Pages/ContactSupportDetail";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -32,9 +34,11 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator  screenOptions={{ headerShown: false }}>
         {/* Define your screens here */}
-        <Stack.Screen name="KU-MAN" component={Title} />
-        <Stack.Screen name="Login" component={Login} />
+        {/* <Stack.Screen name="KU-MAN" component={Title} /> */}
+        {/* <Stack.Screen name="Login" component={Login} /> */}
         <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="ContactSupport" component={ContactSupport} />
+        <Stack.Screen name="ContactSupportDetail" component={ContactSupportDetail} />
         <Stack.Screen name="Report" component={Report} />
         <Stack.Screen name="Order" component={Order} />
         <Stack.Screen name="Cafeteria" component={Cafeteria} />
