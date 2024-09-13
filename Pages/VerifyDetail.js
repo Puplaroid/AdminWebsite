@@ -26,22 +26,49 @@ export default function VerifyDetail() {
 
   // Function to send data to backend
   const sendResultToBackend = () => {
+    // Here you can make an API call to send the result to your backend
+    Alert.alert(`User ${result}`);
+    setModalVisible(false);
     navigation.goBack();
   };
+
   return (
     <View style={styles.container}>
       {/* Include Header */}
       <Header />
       <View style={styles.innerContainer}>
-        <Text style={styles.userInfo}>ชื่อ: {user.name}</Text>
-        <Text style={styles.userInfo}>เบอร์โทรศัพท์: 123456789</Text>
-        <Text style={styles.userInfo}>บัญชีรับเงิน: ABC123</Text>
-
         <View style={styles.imageContainer}>
           <Image
-            source={{ uri: "https://via.placeholder.com/150" }}
+            source={{
+              uri: user.profilePicture
+                ? `https://ku-man.runnakjeen.com/${user.profilePicture}` // If profilePicture is a valid path
+                : "https://via.placeholder.com/150", // Fallback image
+            }}
             style={styles.image}
           />
+        </View>
+        
+        {/* Display user details */}
+        <Text style={styles.userInfoTitle}>User Details</Text>
+        <View style={styles.userInfoContainer}>
+          <Text style={styles.userInfoLabel}>ชื่อผู้ใช้: </Text>
+          <Text style={styles.userInfo}>{user.username}</Text>
+        </View>
+        <View style={styles.userInfoContainer}>
+          <Text style={styles.userInfoLabel}>อีเมล: </Text>
+          <Text style={styles.userInfo}>{user.email}</Text>
+        </View>
+        <View style={styles.userInfoContainer}>
+          <Text style={styles.userInfoLabel}>เบอร์โทรศัพท์: </Text>
+          <Text style={styles.userInfo}>{user.phoneNumber}</Text>
+        </View>
+        <View style={styles.userInfoContainer}>
+          <Text style={styles.userInfoLabel}>บัญชีรับเงิน: </Text>
+          <Text style={styles.userInfo}>{user.bankAccountName}</Text>
+        </View>
+        <View style={styles.userInfoContainer}>
+          <Text style={styles.userInfoLabel}>เลขที่บัญชี: </Text>
+          <Text style={styles.userInfo}>{user.bankAccountNo}</Text>
         </View>
 
         <View style={styles.buttonContainer}>
@@ -93,46 +120,69 @@ const styles = StyleSheet.create({
   },
   innerContainer: {
     flex: 1,
-    padding: 10,
-    marginHorizontal: "25%",
-  },
-  userInfo: {
-    fontSize: 24,
-    marginVertical: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
   imageContainer: {
+    marginBottom: 20,
     alignItems: "center",
-    marginVertical: 20,
   },
   image: {
     width: 300,
     height: 300,
-    borderRadius: 75,
+    borderRadius: 15,
     borderWidth: 2,
     borderColor: "#ccc",
+  },
+  userInfoTitle: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 20,
+    textAlign: "center",
+    color: "#333",
+  },
+  userInfoContainer: {
+    flexDirection: "row",
+    marginVertical: 5,
+    alignItems: "center",
+  },
+  userInfoLabel: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#555",
+    width: 150,
+    textAlign: "right",
+    marginRight: 10,
+  },
+  userInfo: {
+    fontSize: 20,
+    color: "#333",
   },
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
-    marginTop: 20,
+    marginTop: 50,
+    width: "50%",
   },
   passButton: {
-    padding: 10,
+    padding: 15,
     backgroundColor: "green",
-    borderRadius: 5,
+    borderRadius: 10,
     alignItems: "center",
+    width: "40%",
   },
   unpassButton: {
-    padding: 10,
+    padding: 15,
     backgroundColor: "red",
-    borderRadius: 5,
+    borderRadius: 10,
     alignItems: "center",
+    width: "40%",
   },
   buttonText: {
     color: "#fff",
     fontSize: 20,
     fontWeight: "bold",
-    margin: 10,
+    marginVertical: 5,
   },
   modalBackground: {
     flex: 1,

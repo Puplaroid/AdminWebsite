@@ -9,9 +9,9 @@ export default function Order_DB() {
   // Sample order data
   const orderData = [
     { orderid: 1, user: "user: yyyyy", time: "9:42", status: "ongoing" },
-    { orderid: 2, user: "user: yyyyy", time: "9:41", status: "complete" },
+    { orderid: 2, user: "user: yyyyy", time: "9:41", status: "ongoing" },
     { orderid: 3, user: "user: yyyyy", time: "9:38", status: "cancel" },
-    { orderid: 4, user: "user: yyyyy", time: "9:38", status: "ongoing" },
+    { orderid: 4, user: "user: yyyyy", time: "9:38", status: "complete" },
   ];
   
   const totalOrders = 1234;
